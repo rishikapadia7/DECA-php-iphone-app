@@ -1,0 +1,17 @@
+CREATE TABLE observation_has_skill (observation_id INT, observation_student_id INT, observation_teacher_id INT, observation_klass_id INT, skill_id INT, level_id INT, INDEX fk_observation_has_skill_observation1_idx (observation_id, observation_student_id, observation_teacher_id, observation_klass_id), INDEX fk_observation_has_skill_skill1_idx (skill_id), INDEX fk_observation_has_skill_level1_idx (level_id), PRIMARY KEY(observation_id, observation_student_id, observation_teacher_id, observation_klass_id, skill_id, level_id)) DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ENGINE = InnoDB;
+CREATE TABLE student_has_klass (student_id INT, klass_id INT, INDEX fk_student_has_klass_student1_idx (student_id), INDEX fk_student_has_klass_klass1_idx (klass_id), PRIMARY KEY(student_id, klass_id)) DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ENGINE = InnoDB;
+CREATE TABLE klass (id INT AUTO_INCREMENT, course_code VARCHAR(6), section VARCHAR(1), name VARCHAR(45) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ENGINE = InnoDB;
+CREATE TABLE level (id INT AUTO_INCREMENT, code VARCHAR(1) NOT NULL, description VARCHAR(45) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ENGINE = InnoDB;
+CREATE TABLE observation (id INT AUTO_INCREMENT, comment MEDIUMTEXT NOT NULL, student_id INT, teacher_id INT, klass_id INT, INDEX fk_observation_student1_idx (student_id), INDEX fk_observation_teacher1_idx (teacher_id), INDEX fk_observation_klass1_idx (klass_id), PRIMARY KEY(id, student_id, teacher_id, klass_id)) DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ENGINE = InnoDB;
+CREATE TABLE skill (id INT AUTO_INCREMENT, name VARCHAR(45) NOT NULL, description MEDIUMTEXT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ENGINE = InnoDB;
+CREATE TABLE student (id INT AUTO_INCREMENT, student_id INT, first_name VARCHAR(45) NOT NULL, last_name VARCHAR(45) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ENGINE = InnoDB;
+CREATE TABLE teacher (id INT AUTO_INCREMENT, username VARCHAR(45) NOT NULL, first_name VARCHAR(45) NOT NULL, last_name VARCHAR(45) NOT NULL, password VARCHAR(45) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ENGINE = InnoDB;
+ALTER TABLE observation_has_skill ADD CONSTRAINT observation_has_skill_skill_id_skill_id FOREIGN KEY (skill_id) REFERENCES skill(id);
+ALTER TABLE observation_has_skill ADD CONSTRAINT observation_has_skill_observation_id_observation_id FOREIGN KEY (observation_id) REFERENCES observation(id);
+ALTER TABLE observation_has_skill ADD CONSTRAINT observation_has_skill_level_id_level_id FOREIGN KEY (level_id) REFERENCES level(id);
+ALTER TABLE student_has_klass ADD CONSTRAINT student_has_klass_student_id_student_id FOREIGN KEY (student_id) REFERENCES student(id);
+ALTER TABLE student_has_klass ADD CONSTRAINT student_has_klass_klass_id_klass_id FOREIGN KEY (klass_id) REFERENCES klass(id);
+ALTER TABLE observation ADD CONSTRAINT observation_teacher_id_teacher_id FOREIGN KEY (teacher_id) REFERENCES teacher(id);
+ALTER TABLE observation ADD CONSTRAINT observation_student_id_student_id FOREIGN KEY (student_id) REFERENCES student(id);
+ALTER TABLE observation ADD CONSTRAINT observation_klass_id_klass_id FOREIGN KEY (klass_id) REFERENCES klass(id);
+ALTER TABLE observation ADD CONSTRAINT observation_id_observation_has_skill_observation_id FOREIGN KEY (id) REFERENCES observation_has_skill(observation_id);

@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>css</title>
+        <style type="text/css">
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: #ccc;
+        }
+        
+        #viewport {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 320px;
+            height: 480px;
+            overflow: hidden;
+        }
+        
+        #container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1280px;
+            height: 480px;
+            font: 16px/1.5 Helvetica, Sans-Serif;
+            background: white;
+            -webkit-transition: left 250ms ease;
+        }
+        
+        #container.shifted {
+            left: -100%;
+        }
+        
+        .col {
+            float: left;
+            width: 320px;
+            height: 480px;
+            font-size: 24px;
+            line-height: 480px;
+            text-align: center;
+        }
+        
+        .col1 { color: maroon; }
+        .col2 { color: navy; }
+        .col3 { color: green; }
+        .col4 { color: gray; }
+        
+        </style>
+    </head>
+    <body>
+        <div id="viewport">
+            <div id="container">
+                <div class="col col1">Column 1</div>
+                <div class="col col2">Column 2</div>
+            </div>
+        </div>
+        <script type="text/javascript" charset="utf-8">
+        
+        (function () {
+            var container, toggle;
+            
+            container = document.getElementById('container');
+            
+            toggle = function () {
+                container.className = container.className.indexOf('shifted') > -1 ? '': 'shifted';
+            }
+            
+            // assign event handlers
+            if (navigator.userAgent.indexOf('iPhone') > -1) {
+                container.addEventListener('touchend',  function () {
+                    toggle();
+                }, false);
+            }
+            else {
+                container.addEventListener('mouseup',  function () {
+                    toggle();
+                }, false);
+            }
+        })();
+        
+        </script>
+    </body>
+</html>

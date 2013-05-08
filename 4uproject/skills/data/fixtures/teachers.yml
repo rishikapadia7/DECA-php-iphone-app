@@ -1,0 +1,17 @@
+teacher:
+    rohit:
+        username: rohit.anilkumar
+        first_name: Rohit
+        last_name: Anilkumar
+        password: ilovegrapes
+    lynda:
+        username: lynda.zhao
+        first_name: Lynda
+        last_name: Zhao
+        password: ilovepineapples
+    kyle:
+        username: kyle.dolden
+        first_name: Kyle
+        last_name: Dolden
+        password: ilovemangoes
+        

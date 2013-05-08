@@ -1,0 +1,20 @@
+/*
+ * Store CSS specific to the login page in this file.
+ */ 
+
+/* BY TAG */
+
+/*
+h1 {
+    margin-top: 0px;
+}
+
+/* BY CLASS */
+
+/* BY ID */
+*/
+#loginError
+{
+    color: red;
+}
+

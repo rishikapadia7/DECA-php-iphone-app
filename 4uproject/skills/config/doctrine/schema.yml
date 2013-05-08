@@ -1,0 +1,212 @@
+---
+detect_relations: true
+options:
+  collate: latin1_swedish_ci
+  charset: latin1
+  type: InnoDB
+
+student:
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    student_id:
+      type: integer(4)
+    first_name:
+      type: string(45)
+      notnull: true
+    last_name:
+      type: string(45)
+      notnull: true
+
+klass:
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    course_code:
+      type: string(6)
+    section:
+      type: string(1)
+    name:
+      type: string(45)
+      notnull: true
+
+skill:
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    name:
+      type: string(45)
+      notnull: true
+    description:
+      type: clob(65535)
+      notnull: true
+
+teacher:
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    username:
+      type: string(45)
+      notnull: true
+    first_name:
+      type: string(45)
+      notnull: true
+    last_name:
+      type: string(45)
+      notnull: true
+    password:
+      type: string(45)
+      notnull: true
+
+observation:
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    comment:
+      type: clob(65535)
+      notnull: true
+    student_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    teacher_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    klass_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    student:
+      class: student
+      local: student_id
+      foreign: id
+      foreignAlias: observations
+    teacher:
+      class: teacher
+      local: teacher_id
+      foreign: id
+      foreignAlias: observations
+    klass:
+      class: klass
+      local: klass_id
+      foreign: id
+      foreignAlias: observations
+  indexes:
+    fk_observation_student1:
+      fields: [student_id]
+    fk_observation_teacher1:
+      fields: [teacher_id]
+    fk_observation_klass1:
+      fields: [klass_id]
+
+level:
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    code:
+      type: string(1)
+      notnull: true
+    description:
+      type: string(45)
+      notnull: true
+
+StudentKlass:
+  tableName: student_has_klass
+  columns:
+    student_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    klass_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    student:
+      class: student
+      local: student_id
+      foreign: id
+      foreignAlias: student_has_klasses
+    klass:
+      class: klass
+      local: klass_id
+      foreign: id
+      foreignAlias: student_has_klasses
+  indexes:
+    fk_student_has_klass_student1:
+      fields: [student_id]
+    fk_student_has_klass_klass1:
+      fields: [klass_id]
+
+ObservationSkill:
+  tableName: observation_has_skill
+  columns:
+    observation_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    observation_student_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    observation_teacher_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    observation_klass_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    skill_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    level_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    observation:
+      class: observation
+      local: observation_id
+      foreign: id
+      foreignAlias: observation_has_skills
+    skill:
+      class: skill
+      local: skill_id
+      foreign: id
+      foreignAlias: observation_has_skills
+    level:
+      class: level
+      local: level_id
+      foreign: id
+      foreignAlias: observation_has_skills
+  indexes:
+    fk_observation_has_skill_observation1:
+      fields: [observation_id, observation_student_id, observation_teacher_id, observation_klass_id]
+    fk_observation_has_skill_skill1:
+      fields: [skill_id]
+    fk_observation_has_skill_level1:
+      fields: [level_id]
+
+

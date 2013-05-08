@@ -1,0 +1,48 @@
+skill:
+    responsibility:
+        name: Responsibility
+        description: |
+            Do I finish all assigned tasks in the classroom? (i.e. did I set up my work area properly? Did I clean up after? Did I finish all of the things on the board?)
+            Do I complete assignments and homework on time?
+            Can I manage my time in the classroom?
+    organization:
+        name: Organization
+        description: |
+            Do I plan my projects and assignments before I start?
+            Am I able to prioritize accurately what needs to be done first?
+            Am I able to get information I need for completing my tasks by myself?
+            Do I set daily/weekly study schedules for myself?
+    independent_work:
+        name: Independent Work
+        description: |
+            Do I complete work in class by myself with little distraction from others?
+            Am I able to figure out what my next steps are in an assignment by myself?
+            Am I able to revise my goals and ideas for assignments on my own? (Do I know what I need to work on more, or what needs to be redone? Based on what I have learned, can I change my project/assignment to make it better by myself?)
+            Am I able to stay focused and on-task without my teacher reminding me to do so?
+    collaboration:
+        name: Collaboration
+        description: |
+            Can I do any role assigned to me in a group setting? (i.e. can I be the recorder, the materials manager and the time keeper?)
+            Do I do my fair share of work in a group?
+            Do I respond positively to otherʼs ideas and opinions?
+            Am I flexible and can I work with many different personalities in a group?
+            Am I able to resolve tension and/or conflicts that arise in a group without any bad feelings?
+            Do I share my expertise, resources and information with the rest of my group?
+    initiative:
+        name: Initiative
+        description: |
+            Do I look for new opportunities in learning? (i.e. do I look up something interesting I heard in class, do I ask questions about something new Iʼve learned...)
+            Can I come up with innovative ideas for assignments/projects?
+            Am I interested and curious about learning?
+            Do I have a positive mindset towards new tasks?
+            Am I able to advocate for myself? Can I ask for help when I need it or when others do?
+    self_regulation:
+        name: Self-Regulation
+        description: |
+            Am I able to set my own goals and monitor my progress towards them?
+            Do I ask for clarification and assistance when needed?
+            Am I able to accurately assess where my strengths and needs are?
+            Do I know what I am interested in?
+            Am I able to identify learning opportunities that I should take to help me reach my goals?
+            Can I come up with strategies on my own to help me reach my goals?
+            Am I able to persevere and make an effort even when the work is challenging?

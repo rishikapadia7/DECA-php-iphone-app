@@ -1,0 +1,35 @@
+/* Store Universal Styles Here */
+
+/* BY TAG */
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+/* BY CLASS */
+
+.error {
+    color: red;
+}
+
+div.error {
+    
+}
+span.error{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Helvetica;
+    color: black;
+
+}
+
+/* BY ID */
+
+#example
+{
+    color: green;
+}
+
+#body {
+    position: relative;
+    top: 2em;
+}
