@@ -44,11 +44,11 @@ towards the release of this first draft, specifically the final four days prior
 to system release.  The development team apologises for any features that are not
 present in the release of the system due to time constraints.
 
-#### System testing client: Apple iPod touch, 4th generation running iOS 4.1
-#### System testing server: Adhoc connection over Windows 7 laptop with MySQL 5.1.41 and PHP 5.3 using localhost server with Apache.
+###### System testing client: Apple iPod touch, 4th generation running iOS 4.1
+###### System testing server: Adhoc connection over Windows 7 laptop with MySQL 5.1.41 and PHP 5.3 using localhost server with Apache.
 
 
-#### This system is no longer under development and the project has been terminated.
+###### This system is no longer under development and the project has been terminated.
 
 
 
