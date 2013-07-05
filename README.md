@@ -4,9 +4,13 @@ This is a PHP web-application optimized for the iPhone 4 that was implemented be
 The intended user of this application is a DECA chapter advisor (teacher at a school responsible for DECA activity).  The advisor can run most if not all CRUD database operations on their own account, students, a student's partner, events at regional, provincial, and international level, and the chapter (school).  Additionally the App has a feedback page.
 
 ## References
-The requirements document for this app can be found [here](https://docs.google.com/document/d/14Am1FSDadKWy1lU1iAGWnMhpTEuFMEgEFjCoV8fsOlY/pub).
-The apportioning of requirements (part of the specifications document which was not fully completed due to time constraints) for this app can be found [here](https://docs.google.com/document/d/1z8Rx6yxDTkrkyYF9KVW_PdQEfJrUH4jiAX-An1_xaEM/pub#h.4tn65s2l90lh).
-The software design document can be found [here](https://docs.google.com/document/d/1cgrIz1u48p77-U7svLeWFt50tAW_3PCe2Y10H_BLuMo/edit).
+Requirements document: [here](https://docs.google.com/document/d/14Am1FSDadKWy1lU1iAGWnMhpTEuFMEgEFjCoV8fsOlY/pub)
+
+The apportioning of requirements (part of the specifications document which was not fully completed due to time constraints): [here](https://docs.google.com/document/d/1z8Rx6yxDTkrkyYF9KVW_PdQEfJrUH4jiAX-An1_xaEM/pub#h.4tn65s2l90lh)
+
+Design Document [here](https://docs.google.com/document/d/1cgrIz1u48p77-U7svLeWFt50tAW_3PCe2Y10H_BLuMo/edit)
+
+Enhanced Entity Relationship (EER) Diagram: [here](https://docs.google.com/file/d/0B06ByqkuXCJPc09YSFBucml0TjQ/edit?usp=sharing)
 
 ## Release Notes
 Trillium (codename: Project Nerdibyte), Release Notes version 1.01
